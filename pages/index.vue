@@ -58,7 +58,7 @@ let menu = ref("work");
 const graphql = useStrapiGraphQL();
 const { login } = useStrapiAuth();
 
-await login({ identifier: "nrcfrld@gmail.com", password: "asdfasdf" });
+await login({ identifier: "public-user", password: "asdfasdf" });
 
 const graphRes: any = await graphql(`
 	query {
