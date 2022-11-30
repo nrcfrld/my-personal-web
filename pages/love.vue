@@ -1,12 +1,6 @@
 <template>
-	<div class="grid columns-2 md:columns-3 lg:columns-4">
-		<img class="mb-4" src="https://picsum.photos/id/231/200/300" />
-		<img class="mb-4" src="https://picsum.photos/id/232/200/300" />
-		<img class="mb-4" src="https://picsum.photos/id/233/600/300" />
-		<img class="mb-4" src="https://picsum.photos/id/234/200/300" />
-		<img class="mb-4" src="https://picsum.photos/id/235/200/300" />
-		<img class="mb-4" src="https://picsum.photos/id/236/500/300" />
-		<img class="mb-4" src="https://picsum.photos/id/237/200/300" />
+	<div>
+		<h1 class="text-2xl text-center">Widya Alfira</h1>
 	</div>
 </template>
 
