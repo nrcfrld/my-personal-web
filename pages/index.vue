@@ -1,5 +1,5 @@
 <template>
-	<div class="max-w-screen-sm mx-auto px-4">
+	<main class="max-w-screen-sm mx-auto px-4">
 		<Header />
 		<ProfileCard />
 		<nav
@@ -22,10 +22,13 @@
 			</div>
 		</nav>
 
-		<section class="mt-4">
+		<section class="mt-8">
 			<div v-if="menu === 'work'">
 				<template v-if="!loading">
-					<div v-if="works.length > 0" class="grid grid-cols-2 gap-4">
+					<div
+						v-if="works.length > 0"
+						class="grid grid-cols-1 sm:grid-cols-2 gap-6"
+					>
 						<ProjectCard
 							v-for="(work, i) in works"
 							:key="i + 'project'"
@@ -40,10 +43,9 @@
 					<p class="text-center py-16">Loading...</p>
 				</template>
 			</div>
-			<div v-if="menu === 'about'">About</div>
 		</section>
 		<Footer />
-	</div>
+	</main>
 </template>
 
 <script lang="ts" setup>
@@ -51,38 +53,39 @@ import Header from "@/components/layouts/Header.vue";
 import Footer from "@/components/layouts/Footer.vue";
 import ProfileCard from "@/components/partials/ProfileCard.vue";
 import ProjectCard from "@/components/elements/ProjectCard.vue";
+import { Ref } from "vue";
 
-let loading = ref(false);
+let loading = ref(true);
 let menu = ref("work");
 
 const graphql = useStrapiGraphQL();
 const { login } = useStrapiAuth();
+let works: Ref<any[]> = ref([]);
 
 await login({ identifier: "public-user", password: "asdfasdf" });
 
-const graphRes: any = await graphql(`
-	query {
-		works {
-			data {
-				attributes {
-					title
-					tags
-					thumbnail {
-						data {
-							attributes {
-								url
+onMounted(async () => {
+	const graphRes: any = await graphql(`
+		query {
+			works(sort: "createdAt:desc") {
+				data {
+					attributes {
+						title
+						tags
+						thumbnail {
+							data {
+								attributes {
+									url
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-	}
-`);
+	`);
 
-const works: any[] = graphRes.data.works.data;
-
-onMounted(() => {
+	works.value = graphRes.data.works.data;
 	loading.value = false;
 });
 </script>

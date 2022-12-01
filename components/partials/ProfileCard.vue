@@ -1,6 +1,6 @@
 <template>
-	<section class="sm:flex mt-10 items-center">
-		<div class="min-w-max mr-24">
+	<section class="flex mt-10 items-start">
+		<div class="min-w-max sm:mr-24">
 			<p>Hi, I'm <span>Enrico</span> .</p>
 			<p>
 				I'm a
@@ -11,7 +11,7 @@
 				<span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
 			</p>
 			<div class="flex mt-6 gap-2">
-				<a href="#">
+				<a href="https://instagram.com/enrico_feraldo" target="_blank">
 					<svg
 						class="h-6 text-white fill-current hover:text-indigo-300"
 						viewBox="0 0 32 32"
@@ -24,7 +24,7 @@
 					</svg>
 				</a>
 
-				<a href="#">
+				<a href="https://www.tiktok.com/@tidakminumes" target="_blank">
 					<svg
 						class="h-6 text-white fill-current hover:text-indigo-300"
 						viewBox="0 0 24 24"
@@ -37,7 +37,7 @@
 					</svg>
 				</a>
 
-				<a href="#"
+				<a href="https://www.linkedin.com/in/nrcfrld" target="_blank"
 					><svg
 						viewBox="0 0 28 28"
 						class="h-6 text-white fill-current hover:text-indigo-300"
@@ -53,7 +53,8 @@
 
 			<div class="mt-8 flex gap-2">
 				<a
-					href="#"
+					href="https://drive.google.com/file/d/1gsO9QORsZAnm8SyZ-Wielvf9ivA8BJT0/view?usp=sharing"
+					target="_blank"
 					class="hover:bg-indigo-700 bg-indigo-600 px-4 py-2 rounded-full font-semibold text-sm flex gap-1"
 				>
 					Download CV
@@ -73,7 +74,7 @@
 					</svg>
 				</a>
 				<a
-					href="#"
+					href="mailto:nrcfrld@gmail.com"
 					class="text-indigo-200 hover:bg-slate-700 bg-slate-800 flex px-4 py-2 rounded-full font-semibold text-sm gap-1"
 				>
 					Contact Me
@@ -94,11 +95,13 @@
 				</a>
 			</div>
 		</div>
-		<img
-			src="/img/postcard2.jpg"
-			class="w-40 h-40 rounded-full border-4"
-			alt="Enrico Feraldo Kalengkongang"
-		/>
+		<div class="-ml-4 sm:ml-0">
+			<img
+				src="/img/postcard2.jpg"
+				class="w-24 sm:w-40 sm:h-40 rounded-full border-4"
+				alt="Enrico Feraldo Kalengkongang"
+			/>
+		</div>
 		<!-- <svg
 			class="hidden sm:block w-full max-w-xs"
 			viewBox="0 0 1000 1000"

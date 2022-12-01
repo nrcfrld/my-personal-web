@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer base {
+	html,
 	body {
-		@apply bg-neutral-900;
-		@apply text-gray-100;
+		@apply bg-neutral-900 text-gray-100 min-h-screen relative overflow-x-hidden;
 	}
 }

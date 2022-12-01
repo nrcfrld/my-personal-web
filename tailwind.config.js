@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
 	content: [
 		"./components/**/*.{js,vue,ts}",
@@ -9,6 +12,9 @@ module.exports = {
 		"./app.vue",
 	],
 	theme: {
+		fontFamily: {
+			sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+		},
 		extend: {},
 	},
 	plugins: [],
