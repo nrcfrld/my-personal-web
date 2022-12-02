@@ -3,6 +3,7 @@ export default interface Work {
 	description: string;
 	thumbnail: any;
 	tags: string;
+	link: string;
 	createdAt: string;
 	updatedAt: string;
 	publisedAt: string;

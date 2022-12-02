@@ -43,6 +43,7 @@ export default {
 							attributes {
 								title
 								tags
+								link
 								thumbnail {
 									data {
 										attributes {

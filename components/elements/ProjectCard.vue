@@ -1,6 +1,6 @@
 <template>
 	<div class="relative hover:scale-105 duration-300">
-		<nuxt-link to="/">
+		<a :href="work.link" target="_blank">
 			<img
 				class="rounded-lg"
 				:src="`${work.thumbnail.data.attributes.url}`"
@@ -14,7 +14,7 @@
 				</h3>
 				<p class="text-sm">{{ work.tags }}</p>
 			</div>
-		</nuxt-link>
+		</a>
 	</div>
 </template>
 
