@@ -1,5 +1,7 @@
 <template>
 	<main class="max-w-screen-sm mx-auto px-4">
+		<Header />
+		<ProfileCard />
 		<nav
 			class="mt-8 flex justify-between py-3 px-3 bg-slate-800 rounded-full text-indigo-200 text-sm relative z-10"
 		>
