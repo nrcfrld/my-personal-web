@@ -1,5 +1,5 @@
 <template>
-	<div class="relative hover:sm:scale-105 duration-300">
+	<div class="relative hover:scale-105 duration-300">
 		<nuxt-link to="/">
 			<img
 				class="rounded-lg"
