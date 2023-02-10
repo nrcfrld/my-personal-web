@@ -43,6 +43,7 @@ export default defineNuxtConfig({
 	modules: ["@nuxtjs/strapi"],
 	runtimeConfig: {
 		public: {
+			key: process.env.NUXT_KEY,
 			strapi: {
 				url: process.env.NUXT_PUBLIC_STRAPI_URL, // can be overridden by NUXT_PUBLIC_STRAPI_URL environment variable,
 			},

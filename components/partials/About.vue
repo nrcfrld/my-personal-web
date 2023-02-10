@@ -76,7 +76,6 @@ import { Ref } from "vue";
 export default defineComponent({
 	async setup() {
 		const graphql = useStrapiGraphQL();
-		const { login } = useStrapiAuth();
 
 		let loading = ref(false);
 		let menu = ref("about");
@@ -84,7 +83,7 @@ export default defineComponent({
 
 		onMounted(async () => {
 			loading.value = false;
-			await login({ identifier: "public-user", password: "asdfasdf" });
+			// await login({ identifier: "public-user", password: "asdfasdf" });
 
 			const graphRes: any = await graphql(`
 				query {

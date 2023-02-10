@@ -44,21 +44,26 @@
 				</linearGradient>
 			</defs>
 		</svg>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 24 24"
-			fill="currentColor"
-			class="w-8 h-8 text-orange-500 relative z-10"
-		>
-			<path
-				d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
-			/>
-		</svg>
-		<h1
-			class="relative z-10 text-3xl font-bold text-center tracking-widest hover:text-purple-200 duration-500"
-		>
-			Aku Sayang Widya
-		</h1>
+
+		<form v-if="!loading" action="" @submit.prevent="onSubmit">
+			<div class="flex gap-3">
+				<input
+					class="w-100 rounded-lg p-3 text-gray-200 bg-gray-800 focus:outline-none"
+					type="text"
+					placeholder="Ketik nama kamu"
+					name="name"
+					v-model="name"
+				/>
+				<button type="submit" class="bg-indigo-900 px-5 py-3 rounded-lg">
+					Submit
+				</button>
+			</div>
+		</form>
+
+		<div v-if="loading" class="py-5">
+			Tunggu sebentar, sedang mencari {{ name }} di hati aku..
+		</div>
+
 		<nuxt-link class="mt-8 inline-block relative z-10" to="/"
 			>Back to Home</nuxt-link
 		>
@@ -68,7 +73,30 @@
 <script>
 export default {
 	setup() {
-		return {};
+		const config = useRuntimeConfig();
+
+		let key = config.key
+		let name = ref("");
+		let loading = ref(false);
+		let found = ref(false);
+		const onSubmit = () => {
+			loading.value = true;
+			setTimeout(() => {
+				if(name.value.toLowerCase().includes(key)){
+					alert(`Haloooo ${key} ❤️`)
+					loading.value = false;
+				}else{
+					alert(`Di hati aku cuman ada ${key} nih gak ada yang lain 😒`);
+					loading.value = false;
+				}
+			}, 2000);
+		};
+
+		return {
+			onSubmit,
+			name,
+			loading,
+		};
 	},
 };
 </script>

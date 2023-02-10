@@ -38,10 +38,10 @@ import Header from "@/components/layouts/Header.vue";
 import Footer from "@/components/layouts/Footer.vue";
 import ProfileCard from "@/components/partials/ProfileCard.vue";
 import About from "@/components/partials/About.vue";
-import ProjectCard from "@/components/elements/ProjectCard.vue";
 import WorkList from "~~/components/partials/WorkList.vue";
+import { Ref } from "vue";
 
-let menu = ref("work");
+let menu: Ref<string> = ref("work");
 </script>
 
 <style lang="scss"></style>

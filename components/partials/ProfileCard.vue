@@ -24,7 +24,7 @@
 					</svg>
 				</a>
 
-				<a href="https://www.tiktok.com/@tidakminumes" target="_blank">
+				<a href="https://www.tiktok.com/@programmerkematian" target="_blank">
 					<svg
 						class="h-6 text-white fill-current hover:text-indigo-300"
 						viewBox="0 0 24 24"
@@ -53,7 +53,7 @@
 
 			<div class="mt-8 flex gap-2">
 				<a
-					href="https://drive.google.com/file/d/1gsO9QORsZAnm8SyZ-Wielvf9ivA8BJT0/view?usp=sharing"
+					href="https://drive.google.com/drive/folders/1hDssOt-buXYT9jc97H9Dlbd2sIEgSr9_?usp=sharing"
 					target="_blank"
 					class="hover:bg-indigo-700 bg-indigo-600 px-4 py-2 rounded-full font-semibold text-sm flex gap-1"
 				>

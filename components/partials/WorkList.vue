@@ -31,34 +31,33 @@ export default {
 		let loading = ref(true);
 
 		const graphql = useStrapiGraphQL();
-		const { login } = useStrapiAuth();
 		let works: Ref<any[]> = ref([]);
 
 		onMounted(async () => {
-			await login({ identifier: "public-user", password: "asdfasdf" });
-			const graphRes: any = await graphql(`
-				query {
-					works(sort: "createdAt:desc") {
-						data {
-							attributes {
-								title
-								tags
-								link
-								thumbnail {
-									data {
-										attributes {
-											url
+			try {
+				const graphRes: any = await graphql(`
+					query {
+						works(sort: "createdAt:desc") {
+							data {
+								attributes {
+									title
+									tags
+									link
+									thumbnail {
+										data {
+											attributes {
+												url
+											}
 										}
 									}
 								}
 							}
 						}
 					}
-				}
-			`);
-
-			works.value = graphRes.data.works.data;
-			loading.value = false;
+				`);
+				works.value = graphRes.data.works.data;
+				loading.value = false;
+			} catch (error) {}
 		});
 
 		return {
