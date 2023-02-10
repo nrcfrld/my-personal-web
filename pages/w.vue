@@ -46,7 +46,7 @@
 		</svg>
 
 		<form v-if="!loading" action="" @submit.prevent="onSubmit">
-			<div class="flex gap-3">
+			<div class="flex gap-3 relative z-1">
 				<input
 					class="w-100 rounded-lg p-3 text-gray-200 bg-gray-800 focus:outline-none"
 					type="text"
